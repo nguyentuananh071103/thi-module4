@@ -1,0 +1,26 @@
+<div class="container">
+  <button routerLink="/create" class="btn btn-success">Create</button>
+  <table class="table table-striped">
+    <thead class="thead-red">
+    <tr>
+      <th scope="col">Tag</th>
+      <th scope="col">Url</th>
+      <th scope="col">Description</th>
+      <th scope="col" colspan="3">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let awesome of awesomes; index as i">
+      <td>{{awesome.tag}}</td>
+      <td>{{awesome.url}}</td>
+      <td>{{awesome.descriptions}}</td>
+      <td>
+      <button class="btn btn-danger" mat-fab color="primary"
+                (click)="delete(i)">Delete
+        </button>
+      </td>
+      <td><button class="btn btn-warning" routerLink="update/{{awesome.id}}">Update</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
